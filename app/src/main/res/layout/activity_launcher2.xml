@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="70sp"
+        android:id="@+id/textClock"
+         />
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:weightSum="1">
+        <ImageView
+            android:id="@+id/item_app_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight=".20"
+            android:onClick="addClickListener"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="bottom"
+            />
+        <ImageView
+            android:id="@+id/item_app_icon1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight=".20"
+            android:onClick="addClickListener1"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="bottom"
+            />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight=".20"
+            android:text="My Apps"
+            android:elevation="12dp"
+            android:onClick="showApps"
+            android:id="@+id/button"
+            android:layout_gravity="bottom" />
+        <ImageView
+            android:id="@+id/item_app_icon2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight=".20"
+            android:onClick="addClickListener2"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="bottom"
+            />
+        <ImageView
+            android:id="@+id/item_app_icon3"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight=".20"
+            android:onClick="addClickListener3"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="bottom"
+            />
+
+    </LinearLayout>
+</LinearLayout>

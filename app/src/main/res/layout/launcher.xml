@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1.09">
+
+        <fragment
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".20"
+            android:name="com.howlzzz.fab.AppsGridFragment"
+            android:id="@+id/apps_grid1" />
+        <fragment
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".20"
+            android:name="com.howlzzz.fab.AppsGridFragment"
+            android:id="@+id/apps_grid2" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="43dp"
+            android:layout_weight=".20"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:onClick="showApps"
+            android:id="@+id/button" />
+        <fragment
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".20"
+            android:name="com.howlzzz.fab.AppsGridFragment"
+            android:id="@+id/apps_grid3" />
+        <fragment
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".20"
+            android:name="com.howlzzz.fab.AppsGridFragment"
+            android:id="@+id/apps_grid4" />
+
+    </LinearLayout>
+</LinearLayout>

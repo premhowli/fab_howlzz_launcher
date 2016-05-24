@@ -41,16 +41,19 @@
             android:layout_centerVertical="true"
             android:layout_gravity="bottom"
             />
-        <Button
-            style="?android:attr/buttonStyleSmall"
+
+        <ImageView
+            android:id="@+id/apps_menu"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight=".20"
-            android:text="My Apps"
+            android:background="@drawable/menu"
             android:elevation="12dp"
             android:onClick="showApps"
-            android:id="@+id/button"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:layout_gravity="bottom" />
+
         <ImageView
             android:id="@+id/item_app_icon2"
             android:layout_width="wrap_content"

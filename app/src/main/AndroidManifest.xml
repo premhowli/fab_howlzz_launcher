@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.howlzzz.fab">
 
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <application
         android:clearTaskOnLaunch="true"
         android:icon="@drawable/ic_launcher"
@@ -11,24 +12,44 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Launcher"
+            android:excludeFromRecents="true"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:excludeFromRecents="true"
             android:screenOrientation="nosensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
                 <!-- The following two intent-filters are the key to set homescreen -->
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
-
             </intent-filter>
+
+            <uses-permission android:name="android.permission.SET_WALLPAPER" />
+            <!--
+ ATTENTION: This intent was auto-generated. Follow instructions at
+  https://g.co/AppIndexing/AndroidStudio to publish your URLs.
+            -->
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                &lt;!&ndash; ATTENTION: This data URL was auto-generated. We recommend that you use the HTTP scheme.
+
+                <data
+                    android:host="fab.howlzzz.com"
+                    android:pathPrefix="/launcher"
+                    android:scheme="http" />
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".HomeScreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_launcher"
             android:theme="@style/FullscreenTheme" />
-
     </application>
 
 </manifest>

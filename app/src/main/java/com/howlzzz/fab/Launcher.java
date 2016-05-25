@@ -10,6 +10,8 @@ import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,49 +57,24 @@ public class Launcher extends Activity {
         ImageView b=(ImageView)findViewById(R.id.item_app_icon1);
         ImageView c=(ImageView)findViewById(R.id.item_app_icon2);
         ImageView d=(ImageView)findViewById(R.id.item_app_icon3);
-loadApps();
+        loadApps();
+
         a.setImageDrawable(apps.get(0).icon);
         b.setImageDrawable(apps.get(1).icon);
         c.setImageDrawable(apps.get(2).icon);
-        d.setImageDrawable(apps.get(3).icon);
-//loading icons
-        /*Intent i = new Intent(Intent.ACTION_MAIN, null);
-        i.addCategory(Intent.CATEGORY_LAUNCHER);
-
-        List<ResolveInfo> availableActivities = manager.queryIntentActivities(i, 0);
-        for(ResolveInfo ri:availableActivities) {
-            AppDetail app = new AppDetail();
-            app.label = ri.loadLabel(manager);
-            *//*if(ri.loadLabel(manager).toString().contains("Phone")){
-                //a.setImageDrawable(ri.activityInfo.loadIcon(manager));
-            }*//*
-            //app.name = ri.activityInfo.packageName;
-            app.icon = ri.activityInfo.loadIcon(manager);
-            apps.add(app);
-        }
-*/
-    }
-    private void loadApps(View v){
-        manager = getPackageManager();
-        apps = new ArrayList<AppDetail>();
-
-        Intent i = new Intent(Intent.ACTION_MAIN, null);
-        i.addCategory(Intent.CATEGORY_LAUNCHER);
-
-        List<ResolveInfo> availableActivities = manager.queryIntentActivities(i, 0);
-        for(ResolveInfo ri:availableActivities) {
-            AppDetail app = new AppDetail();
-            app.label = ri.loadLabel(manager);
-            if(app.label.toString().contains("Phone")){
-                ImageView appIcon=(ImageView)v.findViewById(R.id.item_app_icon);
-                appIcon.setImageDrawable(ri.activityInfo.loadIcon(manager));
+        //d.setImageDrawable(apps.get(3).icon);
+        LinearLayout home_layout = (LinearLayout) findViewById(R.id.my_home_layout);
+        home_layout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                setWallpaper(v);
+                return true;
             }
-            //app.name = ri.activityInfo.packageName;
-            app.icon = ri.activityInfo.loadIcon(manager);
-            apps.add(app);
-        }
+        });
+
 
     }
+
     public void showApps(View v){
         Intent i=new Intent(this,HomeScreen.class);
         startActivity(i);
@@ -112,6 +89,12 @@ loadApps();
         Intent i = manager.getLaunchIntentForPackage(apps.get(1).name.toString());
         startActivity(i);
 
+    }
+
+    public void setWallpaper(View view) {
+
+        Intent intent = new Intent(Intent.ACTION_SET_WALLPAPER);
+        startActivity(intent);
     }
     public void addClickListener2(View view) {
         Intent i = manager.getLaunchIntentForPackage(apps.get(2).name.toString());
